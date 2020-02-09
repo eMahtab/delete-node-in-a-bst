@@ -90,3 +90,5 @@ class Solution {
 ```
 
 # References :
+1. https://leetcode.com/articles/delete-node-in-a-bst (Great Article !)
+2. https://www.youtube.com/watch?v=gcULXE7ViZw
