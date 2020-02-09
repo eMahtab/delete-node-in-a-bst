@@ -44,18 +44,15 @@ Another valid answer is [5,2,6,null,4,null,7].
 
 ```java
 class Solution {
-  /*
-  One step right and then always left
-  */
+  
+  // Successor : One step right and then always left
   public int successor(TreeNode root) {
     root = root.right;
     while (root.left != null) root = root.left;
     return root.val;
   }
 
-  /*
-  One step left and then always right
-  */
+  // Predecessor : One step left and then always right
   public int predecessor(TreeNode root) {
     root = root.left;
     while (root.right != null) root = root.right;
@@ -66,13 +63,19 @@ class Solution {
     if (root == null) return null;
 
     // delete from the right subtree
-    if (key > root.val) root.right = deleteNode(root.right, key);
+    if (key > root.val) 
+        root.right = deleteNode(root.right, key);
+    
     // delete from the left subtree
-    else if (key < root.val) root.left = deleteNode(root.left, key);
+    else if (key < root.val) 
+        root.left = deleteNode(root.left, key);
+    
     // delete the current node
     else {
       // the node is a leaf
-      if (root.left == null && root.right == null) root = null;
+      if (root.left == null && root.right == null) 
+         root = null;
+      
       // the node is not a leaf and has a right child
       else if (root.right != null) {
         root.val = successor(root);
